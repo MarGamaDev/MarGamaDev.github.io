@@ -1781,11 +1781,15 @@ input, select, textarea {
 
 	ul.contact {
 		list-style: none;
-		padding-left: 0;
+		width: auto;
+		height: auto;
+		display:inline-table;
+		justify-content: center;
 	}
 
 		ul.contact li {
 			position: relative;
+			justify-content: center;
 			border-top: solid 1px #ddd;
 			padding: 1.3em 0 1.3em 7em;
 		}
@@ -1892,26 +1896,26 @@ input, select, textarea {
 
 	ul.social {
 		list-style: none;
-		padding-left: 0;
+		display: flex;
+		width: auto;
+		height: auto;
+		align-items: center;
+		justify-content: center;
 		overflow: hidden;
 		cursor: default;
 		margin: 0 0 3.25em 0;
+		padding-left: 0;
 	}
 
 		ul.social li {
 			display: inline-block;
-			padding-left: 0;
-			margin-left: 0.75em;
+			padding: 14px;
 		}
-
-			ul.social li:first-child {
-				margin-left: 0;
-			}
-
+		
 			ul.social li a {
 				display: inline-block;
-				width: 3em;
-				height: 3em;
+				width: 4em;
+				height: 4em;
 				text-align: center;
 				border-radius: 5px;
 				background: #888;
@@ -1923,16 +1927,16 @@ input, select, textarea {
 
 				ul.social li a:before {
 					color: #fff;
-					font-size: 2em;
-					line-height: 1.5em;
+					font-size: 2.5em;
+					line-height: 1.65em;
 				}
 
-				ul.social li a.fa-facebook {
-					background: #3c5a98;
+				ul.social li a.fa-github {
+					background: #24292e;
 				}
 
-					ul.social li a.fa-facebook:hover {
-						background: #4c6aa8;
+					ul.social li a.fa-github:hover {
+						background: #2b3137;
 					}
 
 				ul.social li a.fa-twitter {
@@ -1943,28 +1947,28 @@ input, select, textarea {
 						background: #3dbaf4;
 					}
 
-				ul.social li a.fa-dribbble {
-					background: #c4376b;
+				ul.social li a.fa-itch-io {
+					background: #fa5c5c;
 				}
 
-					ul.social li a.fa-dribbble:hover {
-						background: #d4477b;
+					ul.social li a.fa-itch-io:hover {
+						background: #fa6e6e;
 					}
 
-				ul.social li a.fa-linkedin {
+				ul.social li a.fa-linkedin-in {
 					background: #006599;
 				}
 
-					ul.social li a.fa-linkedin:hover {
+					ul.social li a.fa-linkedin-in:hover {
 						background: #1075a9;
 					}
 
-				ul.social li a.fa-tumblr {
-					background: #2b4661;
+				ul.social li a.fa-discord {
+					background: #7289da;
 				}
 
-					ul.social li a.fa-tumblr:hover {
-						background: #3b5671;
+					ul.social li a.fa-discord:hover {
+						background: #7e93df;
 					}
 
 				ul.social li a.fa-google-plus {
