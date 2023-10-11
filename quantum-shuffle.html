@@ -63,8 +63,8 @@
 										<p>Github gists listed together for your convenience.</p>
 										<ul class="divided">
 											<li><a href="https://gist.github.com/MarGamaDev/a2fa3dedf1cdd45d875971eebb99f20e" target="_blank">GridCell.cs</a></li>
-											<li><a href="https://gist.github.com/MarGamaDev/3bd4be30836c41950cb5c72e1134084c" target="_blank">ShuffleController.cs</a></li>
 											<li><a href="https://gist.github.com/MarGamaDev/109dfd01acba6a90b7f2c7bad63ed2b6" target="_blank">GridManager.cs</a></li>
+											<li><a href="https://gist.github.com/MarGamaDev/3bd4be30836c41950cb5c72e1134084c" target="_blank">ShuffleController.cs</a></li>
 										</ul>
 									</section>
 
@@ -79,37 +79,27 @@
 											<p>A spatial puzzle game.</p>
 										</header>
 										<p>
-											[[project description]]
-											Vestibulum scelerisque ultricies libero id hendrerit. Vivamus malesuada quam faucibus ante dignissim auctor
-											hendrerit libero placerat. Nulla facilisi. Proin aliquam felis non arcu molestie at accumsan turpis commodo.
-											Proin elementum, nibh non egestas sodales, augue quam aliquet est, id egestas diam justo adipiscing ante.
-											Pellentesque tempus nulla non urna eleifend ut ultrices nisi faucibus.
+											Quantum Shuffle is a first person puzzle game where the goal is to get to the exit. Each level is divided into multiple rooms on a grid, 
+											and you have to shuffle the rooms around to activate levers, get boxes and create a path to the exit.
 										</p>
 										<p>
-											Praesent a dolor leo. Duis in felis in tortor lobortis volutpat et pretium tellus. Vestibulum ac ante nisl,
-											a elementum odio. Duis semper risus et lectus commodo fringilla. Maecenas sagittis convallis justo vel mattis.
-											placerat, nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-											eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-											elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-											sit amet nullam consequat feugiat dolore tempus.
+											This was a group project of 8 weeks, made for school. The focus of the assignment was to create the most polished concept that we could manage within the timeframe.
+											For the first two weeks, we had to pitch two concepts using pitchdecks, make a proof of concept, level designs and a style guide. 
+											Afterwards we spent around 4 weeks on development, redesigns and playtesting. In the last two weeks we were mainly focused on polishing, 
+											such as adding sound effects, lighting and making the game play smoother.
 										</p>
 										<section>
 											<header>
 												<h3>Shuffle mechanic</h3>
 											</header>
 											<p>
-												Check out this <a href="https://gist.github.com/MarGamaDev/109dfd01acba6a90b7f2c7bad63ed2b6" target="_blank">Gridmanager</a>
-												Elementum odio duis semper risus et lectus commodo fringilla. Maecenas sagittis convallis justo vel mattis.
-												placerat, nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-												eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-												elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-												sit amet nullam consequat feugiat dolore tempus.
+												Most of my time during this project was spent creating and improving the main room shuffle mechanic.
+												It's a relatively simple system, where rooms are divided into <a href="https://gist.github.com/MarGamaDev/a2fa3dedf1cdd45d875971eebb99f20e" target="_blank">cells</a>, 
+												which are displaced in groups by the <a href="https://gist.github.com/MarGamaDev/109dfd01acba6a90b7f2c7bad63ed2b6" target="_blank">Gridmanager</a>.
+												To create the illusion that the room is rotating back into the grid when it moves out of it, we create a duplicate that will take the place of the old room and move the old room to where it would enter the grid.
 											</p>
 											<p>
-												Nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-												eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-												elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-												sit amet nullam consequat feugiat dolore tempus.
+												I also worked on the <a href="https://gist.github.com/MarGamaDev/3bd4be30836c41950cb5c72e1134084c" target="_blank">controller</a> for the shuffle UI
 											</p>
 										</section>
 										<a class="image padded"><img src="images/QS/ShuffleShader.gif"/></a>
