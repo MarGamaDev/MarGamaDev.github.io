@@ -92,6 +92,7 @@
 											<header>
 												<h3>Shuffle mechanic</h3>
 											</header>
+											<a class="image padded"><img src="images/QS/ShuffleShader.gif"/></a>
 											<p>
 												Most of my time during this project was spent creating and improving the main room shuffle mechanic.
 												It's a relatively simple system, where rooms are divided into <a href="https://gist.github.com/MarGamaDev/a2fa3dedf1cdd45d875971eebb99f20e" target="_blank">cells</a>, 
@@ -99,21 +100,19 @@
 												To create the illusion that the room is rotating back into the grid when it moves out of it, we create a duplicate that will take the place of the old room and move the old room to where it would enter the grid.
 											</p>
 											<p>
-												I also worked on the <a href="https://gist.github.com/MarGamaDev/3bd4be30836c41950cb5c72e1134084c" target="_blank">controller</a> for the shuffle UI
+												I also worked on the <a href="https://gist.github.com/MarGamaDev/3bd4be30836c41950cb5c72e1134084c" target="_blank">controller</a> for the shuffle UI.
+												For this I created a 3D UI that you can move around on a pivot, so that the player can inspect and interact with the rooms in a more natural way.
+												Additionally, I made a shader to simplify the rooms and only render the objects within the playing space, so as to give the illusion of the rooms looping around.
 											</p>
 										</section>
-										<a class="image padded"><img src="images/QS/ShuffleShader.gif"/></a>
 										<a class="image padded"><img src="images/QS/shader.png"/></a>
 										<section>
 											<header>
-												<h3>So in conclusion ...</h3>
+												<h3>Level Design</h3>
 											</header>
 											<p>
-												Nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-												eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-												elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-												sit amet nullam consequat feugiat dolore tempus. Elementum odio duis semper risus et lectus commodo fringilla.
-												Maecenas sagittis convallis justo vel mattis.
+												Throughout the project I was one of the ones responsible for making level designs. Many of these designs got iterated on or scrapped after playtesting and collecting feedback.
+												Level 3 is the final design I had after 3 revisions.
 											</p>
 										</section>
 									</article>
