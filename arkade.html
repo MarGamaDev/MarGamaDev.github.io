@@ -29,6 +29,7 @@
 									<ul>
 										<li><a href="quantum-shuffle.html">Quantum Shuffle</a></li>
 										<li><a href="go-ham.html">Go Ham!</a></li>
+										<li><a href="arkade.html">Arkade</a></li>
 									</ul>
 								</li>
 								<li><a href="about-me.html">About Me</a></li>
@@ -60,9 +61,10 @@
 										</header>
 										<p>Github gists listed together for your convenience.</p>
 										<ul class="divided">
-											<li><a href="https://gist.github.com/MarGamaDev/a2fa3dedf1cdd45d875971eebb99f20e" target="_blank">GridCell.cs</a></li>
-											<li><a href="https://gist.github.com/MarGamaDev/109dfd01acba6a90b7f2c7bad63ed2b6" target="_blank">GridManager.cs</a></li>
-											<li><a href="https://gist.github.com/MarGamaDev/3bd4be30836c41950cb5c72e1134084c" target="_blank">ShuffleController.cs</a></li>
+											<li><a href="https://gist.github.com/MarGamaDev/346a370784f7196652824f8357641819" target="_blank">MicroGame.cs</a></li>
+											<li><a href="https://gist.github.com/MarGamaDev/938d2a61d6b4a01c240297a87fc6affa" target="_blank">Actor.cs</a></li>
+											<li><a href="https://gist.github.com/MarGamaDev/ceb4eaffc931313f765c5de4b3620c24" target="_blank">MarioGame.cs</a></li>
+											<li><a href="https://gist.github.com/MarGamaDev/21ba5c80f49f62a9b452d2d23437a255" target="_blank">MarioPlayer.cs</a></li>
 										</ul>
 									</section>
 
@@ -77,40 +79,42 @@
 											<p>A microgame collection made with c#</p>
 										</header>
 										<p>
-											Quantum Shuffle is a first person puzzle game where the goal is to get to the exit. Each level is divided into multiple rooms on a grid, 
-											and you have to shuffle the rooms around to activate levers, get boxes and create a path to the exit.
+											Arkade: Memories of Canvas was our capstone project on the canvas engine, which we were using to learn the basics of C# before learning unity.
+											 The project goal was to make a microgame collection, with each of us four making a microgame. I will go over some of the highlights of what I built.
+
 										</p>
 										<p>
-											This was a group project of 8 weeks, made for school. The focus of the assignment was to create the most polished concept that we could manage within the timeframe.
-											For the first two weeks, we had to pitch two concepts using pitchdecks, make a proof of concept, level designs and a style guide. 
-											Afterwards we spent around 4 weeks on development, redesigns and playtesting. In the last two weeks we were mainly focused on polishing, 
-											such as adding sound effects, lighting and making the game play smoother.
+											The main reason I want to show this on my portfolio is to showcase how I created a streamlined environment to create and handle microgames,
+											 in an engine that did little more for us than rendering.
+											  The other developers that built their microgames using my systems found that it made collisions and rendering a lot easier to work with.
+											  Please be patient with the lack of comments, weird formatting and general sloppiness of the code; This was a project very early on in my education, before I learned better.
 										</p>
 										<section>
 											<header>
-												<h3>Shuffle mechanic</h3>
+												<h3>Abstract microgames and actors</h3>
 											</header>
-											<a class="image padded"><img src="images/AC/under_the_hood.gif"/></a>
+											<a class="image padded"><img src="images\AC\arkade_microgame.gif"/></a>
 											<p>
-												Most of my time during this project was spent creating and improving the main room shuffle mechanic.
-												It's a relatively simple system, where rooms are divided into <a href="https://gist.github.com/MarGamaDev/a2fa3dedf1cdd45d875971eebb99f20e" target="_blank">cells</a>, 
-												which are displaced in groups by the <a href="https://gist.github.com/MarGamaDev/109dfd01acba6a90b7f2c7bad63ed2b6" target="_blank">Gridmanager</a>.
-												To create the illusion that the room is rotating back into the grid when it moves out of it, we create a duplicate that will take the place of the old room and move the old room to where it would enter the grid.
+												I created a <a href="https://gist.github.com/MarGamaDev/346a370784f7196652824f8357641819" target="_blank">MicroGame class</a> that would handle shared functionality between the microgames,
+												 such as rendering the arcade cabinet, a timer, handling the gamestate, checking collissions between actors, and disposing of all actors when the game is closed to prevent data leaks.
 											</p>
 											<p>
-												I also worked on the <a href="https://gist.github.com/MarGamaDev/3bd4be30836c41950cb5c72e1134084c" target="_blank">controller</a> for the shuffle UI.
-												For this I created a 3D UI that you can move around on a pivot, so that the player can inspect and interact with the rooms in a more natural way.
-												Additionally, I made a shader to simplify the rooms and only render the objects within the playing space, so as to give the illusion of the rooms looping around.
+												The objects within the game are <a href="https://gist.github.com/MarGamaDev/938d2a61d6b4a01c240297a87fc6affa" target="_blank">Actors</a>, an abstract class that has a hitbox, a bitmap strip that's easy to animate,
+												 and built in lerp and distance functions. The main reason to handle all game objects as an actor was to subvert rendering layer issues, and handle collision easier.
+												  It also made it a lot less likely for memory leaks to happen because of undisposed bitmaps.
 											</p>
 										</section>
-										<a class="image padded"><img src="images/QS/shader.png"/></a>
+										<a class="image padded"><img src="images/AC/under_the_hood.gif"/></a>
 										<section>
 											<header>
-												<h3>Level Design</h3>
+												<h3>Mario Autoscroller</h3>
 											</header>
 											<p>
-												Throughout the project I was one of the ones responsible for making level designs. Many of these designs got iterated on or scrapped after playtesting and collecting feedback.
-												Level 3 is the final design I had after 3 revisions.
+												After making the whole microgame system, I still had to make my own <a href="https://gist.github.com/MarGamaDev/ceb4eaffc931313f765c5de4b3620c24" target="_blank">Mario microgame</a>,
+												 with custom collision made for it so Mario is able to bounce on enemies, and a special kind of actor called MarioBackgroundItem to be able to cleanly render the clouds and hills in the background.
+												 for the floor, I rendered it without making it actors, as that made it easier to line up every brick together cleanly.
+												 The <a href="https://gist.github.com/MarGamaDev/21ba5c80f49f62a9b452d2d23437a255" target="_blank">player controller</a> is a simple actor that simulates gravity when it jumps,
+												 and animates through its spritesheet depending on what state the player is in. 
 											</p>
 										</section>
 									</article>
