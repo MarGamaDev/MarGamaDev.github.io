@@ -87,32 +87,32 @@
 											<p>Clowning around with a friend.</p>
 										</header>
 										<p>
-											Jester's Court was a game made for the 2024 Global Game Jam. The theme was "Make Me Laugh", and we had 48 hours.
+											Jester's Court was a game made for the 2024 Global Game Jam. The theme was "Make Me Laugh", and we had 36 hours.
 										</p>
 										<p>
-											This project was made with 2 artists and 3 devs including me. The other two devs were less experienced, so I took on the brunt of the workload and helped them throughout the entire process. 
-											With the amount of work I did both reworking their code and helping them write it, putting together the maps and functionality, 
-											and tweaking the player experience, it wouldn't be a stretch to say that I did 95% of the devwork.
+											We worked with 2 devs and 3 artists. The concept of our game was initially a little sandbox where you had to do some Jester-ish tasks to entertain the kings, and we got a decent amount of work done on that.
+											But after everyone else went to bed, and I was playtesting the game with other jammers, I found out that only the ballthrowing was really fun. So I made the decision to make a prototype for a dodgeball game to pitch 
+											to my teammates when they woke up. With everyone's approval, we spent the last 12 hours orso fleshing out that prototype.
 										</p>
 										<section>
 											<header>
-												<h3>Contained Camera</h3>
+												<h3>Dodgeball</h3>
 											</header>
-											<a class="image padded"><img src="images/JC/jester_walk.gif"/></a>
+											<a class="image padded"><img src="images/JC/Jester_Dodgeball.gif"/></a>
 											<p>
-												We knew we wanted to have a picturebox vibe to the game, similar to Paper Mario. For this reason, I made a <a href="https://gist.github.com/MarGamaDev/04177e7af238aa3d88fc5f9a8f730169" target="_blank">camera</a> 
-												that would follow the player, but would also be contained within the bounds of an area. 
-												Moving between different areas happens through a transition zone, which would activate the new area and deactivate the old area while the screen fades to black. This helped the game be more performant.
+												The entire logic for the dodgeball game was made quick and dirty in a monolithic <a href="https://gist.github.com/MarGamaDev/1986c3d75f799ad7937368f2fb1a43b9" target="_blank">DodgeballManager</a>. 
+												Spawning and prepping the targets and players, keeping score and controlling who wins is all done here.
+												The philosophy behind it was just to get it working and done, fighting through the exhaustion and pressure to write something somewhat functional.
 											</p>
 										</section>
 										<section>
 											<header>
-												<h3>Spin Puzzle</h3>
+												<h3>Procedural Animation</h3>
 											</header>
-											<a class="image padded"><img src="images/W/Willow_Puzzle.gif"/></a>
+											<a class="image padded"><img src="images/JC/jester_walk.gif"/></a>
 											<p>
-												The <a href="https://gist.github.com/MarGamaDev/6e9542f7f887e4857b0915b44444d6a0" target="_blank">Spin Puzzle</a> is a simple array of objects that remember what orientation they are, and what orientation they need to be. 
-												The buttons on the floor make the pieces spin with a simple animation. When all the pieces are in the correct orientation, the puzzle will solve and the growth orb will drop.
+												The walkcycle is a quick and dirty procedural animation. 
+												The two legs each have their own <a href="https://gist.github.com/MarGamaDev/6abc3efc74011de4396a3551e00f2127" target="_blank">IKFootStepper</a>, with the two of them alternating taking a step.
 											</p>
 										</section>
 									</article>
