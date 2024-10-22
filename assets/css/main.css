@@ -214,7 +214,6 @@ input, select, textarea {
 			}
 
 		}
-
 /* Row */
 
 	.row {
@@ -1905,6 +1904,7 @@ input, select, textarea {
 		display: flex;
 		width: auto;
 		height: auto;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
@@ -2916,4 +2916,33 @@ input, select, textarea {
 				padding: 40px 0 20px 0;
 			}
 
+	}
+/* Tag */
+	.tag {
+		background-color: #4c4c4c;
+		border-radius: 12px;
+		color: #ffffff;
+		font-size:medium;
+		margin-bottom: 3px;
+		margin-right: 3px;
+		padding: 0px 8px;
+	}
+
+	.hardskill {
+		background-color: #cc0505;
+	}
+
+	.softskill {
+		background-color: #fa8383;
+	}
+
+	.emptytag {
+		background-color: #ffffff00;
+		color: #ffffff00;
+	}
+
+	.tag-container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
