@@ -1725,7 +1725,6 @@ input, select, textarea {
 		.image.portret {
 			display: block;
 			width: 100%;
-			margin: 0 0 0 0;
 		}
 
 		.image.padded {
